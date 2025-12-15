@@ -1,0 +1,27 @@
+Timestamp,ThreatTypes,DeliveryAction
+"Dec 24, 2024 7:35:47 AM",Spam,Blocked
+"Dec 23, 2024 7:35:47 AM",Phish,Delivered
+"Dec 23, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Spam,Junked
+"Dec 22, 2024 7:35:47 AM",Spam,Junked
+"Dec 22, 2024 7:35:47 AM",Phish,Junked
+"Dec 22, 2024 7:35:47 AM","Phish, Spam",
+"Dec 22, 2024 7:35:47 AM",Spam,Blocked
+"Dec 22, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Malware,Junked
+"Dec 22, 2024 7:35:47 AM",Spam,Junked
+"Dec 21, 2024 7:35:47 AM",Spam,Junked
+"Dec 21, 2024 7:35:47 AM",Spam,Blocked
+"Dec 21, 2024 7:35:47 AM",Phish,Blocked
+"Dec 21, 2024 7:35:47 AM",Phish,Junked
+"Dec 21, 2024 7:35:47 AM","Phish, Spam",Blocked
+"Dec 20, 2024 7:35:47 AM",Spam,
+"Dec 20, 2024 7:35:47 AM",Phish,Delivered
+"Dec 20, 2024 7:35:47 AM",Spam,Quarantined
+"Dec 20, 2024 7:35:47 AM","Phish, Spam",Blocked
+"Dec 20, 2024 7:35:47 AM",Phish,Delivered
+"Dec 20, 2024 7:35:47 AM",Spam,Blocked
+"Dec 20, 2024 7:35:47 AM",Phish,Blocked
