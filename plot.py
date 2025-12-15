@@ -1,3 +1,8 @@
+"""
+Reads Microsoft Defender CSV exports generated from a KQL query
+and visualizes the number of email threats stopped using a bar graph.
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -19,19 +24,23 @@ stopped = (
     (df["DeliveryAction"] == "Quarantined") |
     (df["DeliveryAction"] == "Blocked"))
 
-emptyBlocked = (df["DeliveryAction"] == " ")
+empty_isNull = (df["DeliveryAction"] == " ")
 
 # Calculate number of emails stopped based on the threat 
 Spam = (spam & stopped).sum()
 Phish = (phish & stopped).sum()
 Phish_spam = (phish_spam & stopped).sum()
-Malware = (malware & (stopped | emptyBlocked)).sum()
+Malware = (malware & (stopped | empty_isNull)).sum()
 
 # Calculate total emails 
-totalEmails = Spam + Phish + Phish_spam + Malware
+total_emails = Spam + Phish + Phish_spam + Malware
 
 # Print second line of graph title as the date 
 timestamp = df["Timestamp"]
+
+top_date = timestamp.iloc[0].split(',')[0].strip()
+bottom_date = timestamp.iloc[-1].split(',')[0].strip()
+
 
 # Plot the bar graph
 summary = pd.DataFrame({
@@ -53,7 +62,7 @@ ax = summary.plot.bar(
 # Display total number of emails top right outsifde (fig) of bar graph
 fig.text(
     0.98, 0.97,          
-     f"{totalEmails} Emails",
+     f"{total_emails} Emails",
     horizontalalignment='right',
     verticalalignment='top',
     fontsize=12,
@@ -74,6 +83,6 @@ for p in ax.patches:
 
 # Label other necessary titles in the bar graph
 ax.set_ylabel('Number of Prevented Threats')
-ax.set_title(f"Email Threats Stopped \n {timestamp}")
+ax.set_title(f"Email Threats Stopped \n {bottom_date} - {top_date}")
 
 plt.show()
